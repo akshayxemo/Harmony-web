@@ -30,7 +30,7 @@ module.exports={
             // varifing the password
             if(bcrypt.compareSync(req.body.password, foundUser.password)){
                 const token = jwt.sign({userId:foundUser._id}, process.env.JWT_SECRET_KEY, {expiresIn: "7d"});
-                res.status(200).send({data:token, messsage: "Logged in Successfully"});
+                res.status(200).send({token:token, messsage: "Logged in Successfully"});
             }else{
                 res.status(401).send({message:"Invalid Email or Password"})
             }

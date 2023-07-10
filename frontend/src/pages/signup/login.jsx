@@ -18,26 +18,27 @@ function LoginForm() {
     };
     
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
     
         if (validateForm()) {
-          setFormError('');
-          setSubmitError('');
+          setFormError('')
+          setSubmitError('')
           console.log(formData)
           axios
               .post('http://localhost:3000/login', formData)
               .then((response) => {
                 // Handle successful response
-                setFormData(initialFormData);
-                console.log(response.data);
+                setFormData(initialFormData)
+                localStorage.setItem("token",response.data.token)
+                console.log(response.data)
               })
               .catch((error) => {
                 // Handle error
-                console.error(error);
-                setSubmitError(error.response.data.message);
-              });
+                console.error(error)
+                setSubmitError(error.response.data.message)
+              })
         } else {
-          setFormError('Please fill in all the fields.');
+          setFormError('Please fill in all the fields.')
         }
       };
     

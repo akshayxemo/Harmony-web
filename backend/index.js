@@ -21,6 +21,7 @@ dbConnect()
 
 // routers
 app.use(require('./routers/auth'));
+app.use(require('./routers/sentiment'));
 
 // listening code
 app.listen(3000, ()=>{

@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 const joi = require('joi')
 const PasswordComplexity = require('joi-password-complexity')
 const bcrypt = require("bcryptjs")
-const {sendMail, nodemailer} = require("../util/sendMail")
+const sendMail = require("../util/sendMail")
 
 // input data validation
 const validate=(data)=>{

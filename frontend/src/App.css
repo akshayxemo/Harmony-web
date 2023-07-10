@@ -16,6 +16,10 @@
   margin-bottom: 0;
   color: var(--lime-blue);
 }
+.desc{
+  max-width: 800px;
+  line-height: 1.5;
+}
 .container{
   max-width: 1280px;
   margin: 0 auto;
@@ -25,10 +29,20 @@
   margin: 0 auto;
 }
 .btn{
+  min-width: 150px;
   padding: 14px;
   text-align: center;
   cursor: pointer;
   border-radius: 3px;
+}
+.btn-white{
+  border: none;
+  background-color: #fff;
+  color: var(--link-color);
+  transition: 0.8s ease;
+}
+.btn-white:hover{
+  color: var(--lime-blue);
 }
 .btn-full{
   width: 100%;
@@ -67,4 +81,18 @@
   color: var(--secondary-text-color);
   border: 1px solid var(--border-field);
   background-color: #fff;
+}
+.center-flex-column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.sub-heading{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.heading-font{
+  font-family: var(--header-font-family);
 }

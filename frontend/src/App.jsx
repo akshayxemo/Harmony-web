@@ -1,7 +1,9 @@
 import './App.css'
 import Signup_login from './pages/signup/signup-login'
 import SignupSuccess from './pages/signup/signup-success'
+import Service from './pages/services/main_service'
 import Loader from './components/loader'
+import Sentiment from './pages/services/questions'
 import * as React from 'react'
 import {
   createBrowserRouter,
@@ -32,6 +34,30 @@ const Router = createBrowserRouter([
   {
     path:'/loader',
     element:<Loader/>
+  },
+  {
+    path:'/services',
+    element: <Service/>
+  },
+  {
+    path:'/services/audio-therapy',
+    element: <Service page="audio"/>
+  },
+  {
+    path:'/services/reading-therapy',
+    element: <Service page="read"/>
+  },
+  {
+    path:'/services/meditation-therapy',
+    element: <Service page="meditation"/>
+  },
+  {
+    path:'/services/laughing-therapy',
+    element: <Service page="laugh"/>
+  },
+  {
+    path:'/sentiment',
+    element: <Sentiment/>
   }
 ])
 

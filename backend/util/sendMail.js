@@ -5,6 +5,9 @@ const sendMail = (toMail, title ,body)=>{
             auth: {
                 user: process.env.MAILLER_ID,
                 pass: process.env.MAIL_PASS_KEY
+            },
+            tls: {
+                rejectUnauthorized: false
             }
             });
 
@@ -24,4 +27,4 @@ const sendMail = (toMail, title ,body)=>{
         });
 }
 
-module.exports = {sendMail, nodemailer}
+module.exports = sendMail

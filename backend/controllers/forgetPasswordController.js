@@ -1,7 +1,8 @@
 const { User } = require("../models/user.model")
 const jwt = require('jsonwebtoken')
 const joi = require('joi')
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer')
+const sendMail = require("../util/sendMail")
 
 // validation check function
 const validate = (data)=>{
@@ -34,28 +35,33 @@ module.exports={
             console.log(link)
 
             // sending email
-            const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.MAILLER_ID,
-                pass: process.env.MAIL_PASS_KEY
-            }
-            });
+            sendMail(foundUser.emailId, "[Harmony] Password Reset E-mail", `Click the link below 👇 to reset your password\n\n${link}`)
 
-            var mailOptions = {
-            from: process.env.MAILLER_ID,
-            to: foundUser.emailId,
-            subject: '[Harmony] Password Reset E-mail',
-            text: 'Click the link below 👇 to reset your password\n\n'+link
-            };
+            // const transporter = nodemailer.createTransport({
+            // service: 'gmail',
+            // auth: {
+            //     user: process.env.MAILLER_ID,
+            //     pass: process.env.MAIL_PASS_KEY
+            // },
+            // tls: {
+            //     rejectUnauthorized: false
+            // }
+            // });
 
-            transporter.sendMail(mailOptions, function(error, info){
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Email sent: ' + info.response);
-            }
-            });
+            // var mailOptions = {
+            // from: process.env.MAILLER_ID,
+            // to: foundUser.emailId,
+            // subject: '[Harmony] Password Reset E-mail',
+            // text: 'Click the link below 👇 to reset your password\n\n'+link
+            // };
+
+            // transporter.sendMail(mailOptions, function(error, info){
+            // if (error) {
+            //     console.log(error);
+            // } else {
+            //     console.log('Email sent: ' + info.response);
+            // }
+            // });
 
             // sending response to client
             res.status(200).json({message:"Success"})
