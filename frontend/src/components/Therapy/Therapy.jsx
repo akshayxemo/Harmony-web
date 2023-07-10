@@ -36,7 +36,7 @@ const Therapy = () => {
             <img src="/Yoga.png" alt="Yoga Therapy" className="f-box-icon"/>
             <h3 className="f-box-heading">Yoga Therapy</h3>
             <p className="f-box-sub">Suspendisse potenti. Ut ipsum odio, luctus placerat vitae, Integer iaculis nisl at mauris varius tempor</p>
-            <button className="lexplore-btn">Let's Explore</button>
+            <Link to={`/services/yoga`} className="lexplore-btn">Let's Explore</Link>
           </div>
           <div className="therapy-box">
             <img src="/Others.png" alt="Other Therapy" className="f-box-icon"/>

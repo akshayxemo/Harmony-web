@@ -4,15 +4,16 @@ import lotus from '../../../public/lotus.png'
 import github from '../../../public/icons/github.png'
 import linkedin from '../../../public/icons/linkedin.png'
 import facebook from '../../../public/icons/facebook-app-symbol.png'
+import {Link} from 'react-router-dom'
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footerContainer">
         <div className="footerNav">
-          <h2>
+          <Link to={`/`}>
           <img src={lotus} alt="logo" className="logo" />
-          </h2>
+          </Link>
           <ul>
             <li>
               <a href="/">Home</a>

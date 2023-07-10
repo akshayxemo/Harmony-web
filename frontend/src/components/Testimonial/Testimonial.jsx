@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Testimonial.css';
+import { Link } from 'react-router-dom';
 
 const Testimonial = () => {
   const testimonials = [
@@ -54,8 +55,8 @@ const Testimonial = () => {
     <div className="container-lg testimonial-container" id='community'>
         <div className="container center-flex-column" style={{padding:"100px 0"}}>
         <h2 className="mini-heading">WE ALL ARE HERE</h2>
-        <p className="heading heading-font">Join Our Community & Share <br /> Your Words.<br/>
-        <button className="btn btn-orange" style={{marginTop:"1.5rem"}}>Lets Explore</button></p>
+        <p className="heading heading-font">Join Our Community & Share <br /> Your Words.<br/></p>
+        <Link to={`/auth/login`} className="btn btn-orange" style={{marginTop:"1.5rem"}}>Lets Explore</Link>
         </div>
       <Slider {...settings}>
         {testimonials.map(testimonial => (

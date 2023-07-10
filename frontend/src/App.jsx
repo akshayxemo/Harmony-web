@@ -52,6 +52,9 @@ const Router = createBrowserRouter([
   {
     path:'/services/reading-therapy',
     element: <Service page="read"/>
+  },{
+    path:'/services/yoga',
+    element: <Service page="yoga"/>
   },
   {
     path:'/services/meditation-therapy',
