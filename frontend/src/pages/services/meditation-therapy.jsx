@@ -1,5 +1,5 @@
 import concerntration from './images/concentration.png'
-import absorption from './images/absorption.png'
+import absorption from './images/mindfulness.png'
 import mindfullness from './images/peace-of-mind.png'
 import './__test__/meditation.css'
 function MeditationTherapy(){

@@ -4,6 +4,8 @@ import SignupSuccess from './pages/signup/signup-success'
 import Service from './pages/services/main_service'
 import Loader from './components/loader'
 import Sentiment from './pages/services/questions'
+import Home from './pages/home/home'
+// import Audio from './pages/services/audio-therapy'
 import * as React from 'react'
 import {
   createBrowserRouter,
@@ -11,6 +13,10 @@ import {
 }from 'react-router-dom'
 
 const Router = createBrowserRouter([
+  {
+    path:'/',
+    element:<Home/>
+  },
   {
     path:'/auth',
     element: <Signup_login page="login"/>
@@ -41,7 +47,7 @@ const Router = createBrowserRouter([
   },
   {
     path:'/services/audio-therapy',
-    element: <Service page="audio"/>
+    element: <Sentiment page="/success/service/audio-therapy"/>
   },
   {
     path:'/services/reading-therapy',
@@ -56,8 +62,8 @@ const Router = createBrowserRouter([
     element: <Service page="laugh"/>
   },
   {
-    path:'/sentiment',
-    element: <Sentiment/>
+    path:'/success/service/audio-therapy',
+    element: <Service page="audio"/>
   }
 ])
 

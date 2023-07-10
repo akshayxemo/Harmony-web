@@ -4,6 +4,7 @@ import LaughingTherapy from './laughing-therapy'
 import AudioTherapy from './audio-therapy'
 import Meditation from './meditation-therapy'
 import ReadingTherapy from './reading-therapy'
+// import Question from './questions'
 ServiceTemplate.propTypes = {
     page: PropTypes.node,
 };

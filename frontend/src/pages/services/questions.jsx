@@ -2,7 +2,14 @@ import axios from 'axios'
 import './__test__/question.css'
 import {useState} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
-function Question(){
+import PropTypes from 'prop-types'
+import Navbar from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
+
+Question.propTypes = {
+    page: PropTypes.node.isRequired,
+};
+function Question(props){
     const navigate = useNavigate()
     const questions = ["Are you feeling overwhelmed or stressed?","Do you have difficulty concentrating or making decisions?","Are you experiencing feelings of sadness or hopelessness?","Are you not finding pleasure or interest in activities that you used to enjoy?","Do you have thoughts of harming yourself or others?"]
     const[questionNo, setQuestionNo]= useState(0)
@@ -32,7 +39,8 @@ function Question(){
             localStorage.setItem("audio-session",JSON.stringify(response.data))
             // localStorage.setItem("audio-session-podcast",response.data.foundPodcast)
             console.log(response.data)
-            navigate("/services/audio-therapy")
+            console.log(props.page)
+            navigate(`${props.page}`)
           })
           .catch((error) => {
             // Handle error
@@ -40,8 +48,9 @@ function Question(){
           })
     }
     return(<>
-        <div className="pop-up">
-            {calcStateOfMind}
+        <div className="flex">
+        <Navbar/>
+        <div className="q-pop-up">
             <h1 className="heading">{questionNo+1}. {questions[questionNo]}</h1>
             <div className="q-option">
                 <span><input type="radio" name='ans' id="ans1" value={-1} onChange={handleAnswer}/> yes</span>
@@ -49,8 +58,10 @@ function Question(){
             </div>
             <form className='sentiment-form' onSubmit={handleSubmit}>
                 {!finalSubmit && <button className="btn btn-black" onClick={handleQuestionEvent}>Next</button> || <button type="submit" className="btn btn-orange">Submit</button>}
-                <Link to={`services/audio-therapy`} className="btn btn-white">Skip</Link>
+                <Link to={`/`} className="btn btn-white">Skip</Link>
             </form>
+        </div>
+        <Footer/>
         </div>
     </>)
 }

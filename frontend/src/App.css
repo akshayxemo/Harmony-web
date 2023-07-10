@@ -6,6 +6,8 @@
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 44px;
+  line-height: 1;
+  color: #000;
 }
 .mini-heading{
   letter-spacing: var(--mini-header-letter-spacing);
@@ -95,4 +97,10 @@
 }
 .heading-font{
   font-family: var(--header-font-family);
+}
+.flex{
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
