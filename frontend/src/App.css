@@ -1,0 +1,13 @@
+.mini-heading {
+  @apply uppercase tracking-widest font-Inter md:text-xl text-base text-teal-500 mb-3
+}
+
+.btn-orange{
+  @apply mt-8 py-6 px-6 text-lg bg-orange-400 text-white hover:bg-orange-500
+}
+.btn-teal{
+  @apply mt-8 py-6 px-6 text-lg bg-teal-400 text-white hover:bg-teal-500
+}
+.btn{
+  @apply mt-8 py-6 px-6 text-lg bg-gray-950 text-white hover:bg-gray-800
+}

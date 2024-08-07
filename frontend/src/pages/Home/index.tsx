@@ -1,8 +1,13 @@
+import About from "@/components/Home/About";
+import Hero from "@/components/Home/Hero";
 
 const HomePage = () => {
-  return (
-    <div className="container">index</div>
-  )
-}
+	return (
+		<>
+			<Hero />
+			<About />
+		</>
+	);
+};
 
-export default HomePage
+export default HomePage;

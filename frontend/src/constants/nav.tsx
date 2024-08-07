@@ -10,18 +10,15 @@ export const navigationMenus = [
 		name: "Services",
 		route: "/services",
 		element: <HomePage />,
-		index: false,
 	},
 	{
 		name: "Community",
 		route: "/community",
 		element: <HomePage />,
-		index: false,
 	},
 	{
 		name: "Contacts",
 		route: "/contact",
 		element: <HomePage />,
-		index: false,
 	},
 ];

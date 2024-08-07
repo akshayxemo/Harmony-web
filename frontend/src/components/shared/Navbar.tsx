@@ -2,7 +2,9 @@ import logo from "@/assets/images/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import { navigationMenus } from "@/constants/nav";
 import { useEffect, useState } from "react";
-const Navbar = () => {
+import BookAnAppointmentButton from "./BookAnAppointmentButton";
+
+const Navbar = ({ className }: { className: String }) => {
 	const location = useLocation();
 	const pathname = location.pathname;
 	const [activeNav, setActiveNav] = useState("nav_/");
@@ -12,8 +14,12 @@ const Navbar = () => {
 	}, [pathname, activeNav]);
 
 	return (
-		<nav className="flex flex-row justify-between items-center py-2 px-6">
-			<img src={logo} className="h-14 gap-6" />
+		<nav
+			className={`flex flex-row justify-between items-center py-2 ${className}`}
+		>
+			<Link to={"/"}>
+				<img src={logo} className="h-14 gap-6" />
+			</Link>
 			{/* <p>
 				{pathname} {activeNav}
 			</p> */}
@@ -23,8 +29,8 @@ const Navbar = () => {
 						<Link
 							to={navItem.route}
 							key={`nav_${idx + 1}`}
-							className={`hover:bg-orange-100 ${
-								activeNav === `nav_${navItem.route}` ? "bg-orange-100" : ""
+							className={`hover:bg-teal-100 ${
+								activeNav === `nav_${navItem.route}` ? "bg-teal-100" : ""
 							} py-2 px-4 rounded-md cursor-pointer`}
 							onClick={() => {
 								setActiveNav(`nav_${navItem.route}`);
@@ -35,6 +41,7 @@ const Navbar = () => {
 					);
 				})}
 			</ul>
+			<BookAnAppointmentButton />
 		</nav>
 	);
 };
